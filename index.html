@@ -299,21 +299,9 @@ function ensureAssets(){
  let h=$("#productos .head"),t=h&&$("h2",h);if(h&&!$(".headTitle",h)&&t){let w=document.createElement("div"),i=im("headIcon","./IMG/hecho.jpg");w.className="headTitle";t.parentNode.insertBefore(w,t);w.appendChild(t);i.setAttribute("aria-hidden","true");w.appendChild(i)}
 }
 function currentLang(){return localStorage.getItem("exp_lang")||$(".lang button.on")?.dataset.l||"es"}
-function apply(){
- ensureAssets();let t=T[currentLang()]||T.es,s,q;
- document.title=t.title;attr($('meta[name="description"]'),"content",t.desc);
- txt($(".brand span"),t.brand);txt($(".footBrand span"),t.brand);
- txt($(".k"),t.kicker);txt($(".hero h1"),t.h1);txt($(".hero .lead"),t.lead);txt($(".cta .btn.b"),t.see);
- s=$$(".stats .stat span");[t.s1,t.s2,t.s3].forEach((v,i)=>s[i]&&(s[i].textContent=v));
- txt($("#productos .head h2"),t.pT);txt($("#productos .head p"),t.pD);fillCards("#productos .card",[[t.c1T,t.c1D],[t.c2T,t.c2D],[t.c3T,t.c3D]]);
- txt($("#presencia .head h2"),t.vT);txt($("#presencia .head p"),t.vD);fillCards("#presencia .mw2Static",[[t.v1T,t.v1D],[t.v2T,t.v2D],[t.v3T,t.v3D],[t.v4T,t.v4D]]);
- txt($("#trayectoria .head h2"),t.gT);txt($("#trayectoria .head p"),t.gD);
- txt($("#corporativo .head h2"),t.corpT);txt($("#corporativo .head p"),t.corpD);fillCards("#corporativo .card",[[t.corp1T,t.corp1D],[t.corp2T,t.corp2D],[t.corp3T,t.corp3D]]);
- q=$$("#calidad .card");q[0]&&(txt($("h3",q[0]),t.qT),fillLis(q[0],t.q));q[1]&&(txt($("h3",q[1]),t.dT),fillLis(q[1],t.d));
- txt($("#mercados .head h2"),t.mT);txt($("#mercados .head p"),t.mD);fillCards("#mercados .card",[[t.m1T,t.m1D],[t.m2T,t.m2D],[t.m3T,t.m3D]]);
- txt($("#logistica .head h2"),t.lT);txt($("#logistica .head p"),t.lD);fillCards("#logistica .card",[[t.lt1,t.lt1D],[t.lt2,t.lt2D],[t.lt3,t.lt3D]]);
- txt($("#contacto h2"),t.ctT);txt($("#contacto p"),t.ctD);
- txt($('.siteFoot p[data-i="footMini"]'),t.footMini);txt($('.footBottom span[data-i="footDisclaimer"]'),t.footDisclaimer);txt($("#foot"),"© 2026 Maniw & Co S.A. de C.V.")
+function apply(){ensureAssets();let t=T[currentLang()]||T.es,s,q;document.title=t.title;attr($('meta[name="description"]'),"content",t.desc);txt($(".brand span"),t.brand);txt($(".footBrand span"),t.brand);txt($(".k"),t.kicker);txt($(".hero h1"),t.h1);txt($(".hero .lead"),t.lead);txt($(".cta .btn.b"),t.see);
+ s=$$(".stats .stat span");[t.s1,t.s2,t.s3].forEach((v,i)=>s[i]&&(s[i].textContent=v));txt($("#productos .head h2"),t.pT);txt($("#productos .head p"),t.pD);fillCards("#productos .card",[[t.c1T,t.c1D],[t.c2T,t.c2D],[t.c3T,t.c3D]]);txt($("#presencia .head h2"),t.vT);txt($("#presencia .head p"),t.vD);fillCards("#presencia .mw2Static",[[t.v1T,t.v1D],[t.v2T,t.v2D],[t.v3T,t.v3D],[t.v4T,t.v4D]]);txt($("#trayectoria .head h2"),t.gT);txt($("#trayectoria .head p"),t.gD);txt($("#corporativo .head h2"),t.corpT);txt($("#corporativo .head p"),t.corpD);fillCards("#corporativo .card",[[t.corp1T,t.corp1D],[t.corp2T,t.corp2D],[t.corp3T,t.corp3D]]);
+ q=$$("#calidad .card");q[0]&&(txt($("h3",q[0]),t.qT),fillLis(q[0],t.q));q[1]&&(txt($("h3",q[1]),t.dT),fillLis(q[1],t.d));txt($("#mercados .head h2"),t.mT);txt($("#mercados .head p"),t.mD);fillCards("#mercados .card",[[t.m1T,t.m1D],[t.m2T,t.m2D],[t.m3T,t.m3D]]);txt($("#logistica .head h2"),t.lT);txt($("#logistica .head p"),t.lD);fillCards("#logistica .card",[[t.lt1,t.lt1D],[t.lt2,t.lt2D],[t.lt3,t.lt3D]]);txt($("#contacto h2"),t.ctT);txt($("#contacto p"),t.ctD);txt($('.siteFoot p[data-i="footMini"]'),t.footMini);txt($('.footBottom span[data-i="footDisclaimer"]'),t.footDisclaimer);txt($("#foot"),"© 2026 Maniw & Co S.A. de C.V.")
 }
 apply();$$(".lang button").forEach(b=>b.addEventListener("click",()=>setTimeout(apply,40)));window.addEventListener("load",()=>setTimeout(apply,80));setTimeout(apply,120);      
 })();
