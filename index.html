@@ -284,157 +284,34 @@ footMini:"Mexican Worldwide agroexporter · メキシコシティWTC 28階16号�
 footDisclaimer:"MANIW & Co.の企業資料に基づく情報です。"
 }
 };
-
-function txt(el,v){if(el&&v!==undefined)el.textContent=v}
-function attr(el,k,v){if(el&&v!==undefined)el.setAttribute(k,v)}
-
+function txt(e,v){e&&v!==void 0&&(e.textContent=v)}
+function attr(e,k,v){e&&v!==void 0&&e.setAttribute(k,v)}
+function im(c,s,a=""){let i=document.createElement("img");return i.className=c,i.src=s,i.alt=a,i}
+function fillCards(s,a){$$(s).forEach((c,i)=>{let p=a[i];p&&(txt($("h3",c),p[0]),txt($("p",c),p[1]))})}
+function fillLis(c,a){let l=$$("li",c);a&&a.forEach((v,i)=>l[i]&&(l[i].textContent=v))}
 function ensureAssets(){
-  $$('a.brand b.mark, a.footBrand b.mark').forEach(old=>{
-    const img=document.createElement('img');
-    img.className='brandLogo';
-    img.src='./IMG/mw.png';
-    img.alt='MW';
-    old.replaceWith(img);
-  });
-
-  const topBrand=$('a.brand');
-  if(topBrand && !$('img.brandLogo', topBrand) && $('span[data-i="brand"]', topBrand)){
-    const img=document.createElement('img');
-    img.className='brandLogo';
-    img.src='./IMG/mw.png';
-    img.alt='MW';
-    topBrand.insertBefore(img, topBrand.firstChild);
-  }
-
-  const footBrand=$('a.footBrand');
-  if(footBrand && !$('img.brandLogo', footBrand) && $('span[data-i="brand"]', footBrand)){
-    const img=document.createElement('img');
-    img.className='brandLogo';
-    img.src='./IMG/mw.png';
-    img.alt='MW';
-    footBrand.insertBefore(img, footBrand.firstChild);
-  }
-
-  const head=$('#productos .head');
-  if(head && !$('.headTitle', head)){
-    const h2=$('h2', head);
-    if(h2){
-      const wrap=document.createElement('div');
-      wrap.className='headTitle';
-      h2.parentNode.insertBefore(wrap,h2);
-      wrap.appendChild(h2);
-      const icon=document.createElement('img');
-      icon.className='headIcon';
-      icon.src='./IMG/hecho.jpg';
-      icon.alt='';
-      icon.setAttribute('aria-hidden','true');
-      wrap.appendChild(icon);
-    }
-  }
+ $$("a.brand b.mark,a.footBrand b.mark").forEach(e=>e.replaceWith(im("brandLogo","./IMG/mw.png","MW")));
+ ["a.brand","a.footBrand"].forEach(s=>{let b=$(s);b&&!$("img.brandLogo",b)&&$('span[data-i="brand"]',b)&&b.insertBefore(im("brandLogo","./IMG/mw.png","MW"),b.firstChild)});
+ let h=$("#productos .head"),t=h&&$("h2",h);if(h&&!$(".headTitle",h)&&t){let w=document.createElement("div"),i=im("headIcon","./IMG/hecho.jpg");w.className="headTitle";t.parentNode.insertBefore(w,t);w.appendChild(t);i.setAttribute("aria-hidden","true");w.appendChild(i)}
 }
-
-function currentLang(){
-  return localStorage.getItem('exp_lang') || $('.lang button.on')?.dataset.l || 'es';
-}
-
+function currentLang(){return localStorage.getItem("exp_lang")||$(".lang button.on")?.dataset.l||"es"}
 function apply(){
-  ensureAssets();
-  const l=currentLang();
-  const t=T[l]||T.es;
-
-  document.title=t.title;
-  attr($('meta[name="description"]'),'content',t.desc);
-
-  txt($('.brand span'),t.brand);
-  txt($('.footBrand span'),t.brand);
-
-  txt($('.k'),t.kicker);
-  txt($('.hero h1'),t.h1);
-  txt($('.hero .lead'),t.lead);
-  txt($('.cta .btn.b'),t.see);
-
-  const statSpans=$$('.stats .stat span');
-  if(statSpans[0]) statSpans[0].textContent=t.s1;
-  if(statSpans[1]) statSpans[1].textContent=t.s2;
-  if(statSpans[2]) statSpans[2].textContent=t.s3;
-
-  txt($('#productos .head h2'),t.pT);
-  txt($('#productos .head p'),t.pD);
-  const prod=$$('#productos .card');
-  [[t.c1T,t.c1D],[t.c2T,t.c2D],[t.c3T,t.c3D]].forEach((pair,i)=>{
-    if(prod[i]){
-      txt($('h3',prod[i]),pair[0]);
-      txt($('p',prod[i]),pair[1]);
-    }
-  });
-
-  txt($('#presencia .head h2'),t.vT);
-  txt($('#presencia .head p'),t.vD);
-  const visual=$$('#presencia .mw2Static');
-  [[t.v1T,t.v1D],[t.v2T,t.v2D],[t.v3T,t.v3D],[t.v4T,t.v4D]].forEach((pair,i)=>{
-    if(visual[i]){
-      txt($('h3',visual[i]),pair[0]);
-      txt($('p',visual[i]),pair[1]);
-    }
-  });
-
-  txt($('#trayectoria .head h2'),t.gT);
-  txt($('#trayectoria .head p'),t.gD);
-
-  txt($('#corporativo .head h2'),t.corpT);
-  txt($('#corporativo .head p'),t.corpD);
-  const corp=$$('#corporativo .card');
-  [[t.corp1T,t.corp1D],[t.corp2T,t.corp2D],[t.corp3T,t.corp3D]].forEach((pair,i)=>{
-    if(corp[i]){
-      txt($('h3',corp[i]),pair[0]);
-      txt($('p',corp[i]),pair[1]);
-    }
-  });
-
-  const qual=$$('#calidad .card');
-  if(qual[0]){
-    txt($('h3',qual[0]),t.qT);
-    const lis=$$('li',qual[0]);
-    t.q.forEach((v,i)=>{ if(lis[i]) lis[i].textContent=v; });
-  }
-  if(qual[1]){
-    txt($('h3',qual[1]),t.dT);
-    const lis=$$('li',qual[1]);
-    t.d.forEach((v,i)=>{ if(lis[i]) lis[i].textContent=v; });
-  }
-
-  txt($('#mercados .head h2'),t.mT);
-  txt($('#mercados .head p'),t.mD);
-  const mk=$$('#mercados .card');
-  [[t.m1T,t.m1D],[t.m2T,t.m2D],[t.m3T,t.m3D]].forEach((pair,i)=>{
-    if(mk[i]){
-      txt($('h3',mk[i]),pair[0]);
-      txt($('p',mk[i]),pair[1]);
-    }
-  });
-
-  txt($('#logistica .head h2'),t.lT);
-  txt($('#logistica .head p'),t.lD);
-  const logi=$$('#logistica .card');
-  [[t.lt1,t.lt1D],[t.lt2,t.lt2D],[t.lt3,t.lt3D]].forEach((pair,i)=>{
-    if(logi[i]){
-      txt($('h3',logi[i]),pair[0]);
-      txt($('p',logi[i]),pair[1]);
-    }
-  });
-
-  txt($('#contacto h2'),t.ctT);
-  txt($('#contacto p'),t.ctD);
-
-  txt($('.siteFoot p[data-i="footMini"]'),t.footMini);
-  txt($('.footBottom span[data-i="footDisclaimer"]'),t.footDisclaimer);
-  txt($('#foot'),'© 2026 Maniw & Co S.A. de C.V.');
+ ensureAssets();let t=T[currentLang()]||T.es,s,q;
+ document.title=t.title;attr($('meta[name="description"]'),"content",t.desc);
+ txt($(".brand span"),t.brand);txt($(".footBrand span"),t.brand);
+ txt($(".k"),t.kicker);txt($(".hero h1"),t.h1);txt($(".hero .lead"),t.lead);txt($(".cta .btn.b"),t.see);
+ s=$$(".stats .stat span");[t.s1,t.s2,t.s3].forEach((v,i)=>s[i]&&(s[i].textContent=v));
+ txt($("#productos .head h2"),t.pT);txt($("#productos .head p"),t.pD);fillCards("#productos .card",[[t.c1T,t.c1D],[t.c2T,t.c2D],[t.c3T,t.c3D]]);
+ txt($("#presencia .head h2"),t.vT);txt($("#presencia .head p"),t.vD);fillCards("#presencia .mw2Static",[[t.v1T,t.v1D],[t.v2T,t.v2D],[t.v3T,t.v3D],[t.v4T,t.v4D]]);
+ txt($("#trayectoria .head h2"),t.gT);txt($("#trayectoria .head p"),t.gD);
+ txt($("#corporativo .head h2"),t.corpT);txt($("#corporativo .head p"),t.corpD);fillCards("#corporativo .card",[[t.corp1T,t.corp1D],[t.corp2T,t.corp2D],[t.corp3T,t.corp3D]]);
+ q=$$("#calidad .card");q[0]&&(txt($("h3",q[0]),t.qT),fillLis(q[0],t.q));q[1]&&(txt($("h3",q[1]),t.dT),fillLis(q[1],t.d));
+ txt($("#mercados .head h2"),t.mT);txt($("#mercados .head p"),t.mD);fillCards("#mercados .card",[[t.m1T,t.m1D],[t.m2T,t.m2D],[t.m3T,t.m3D]]);
+ txt($("#logistica .head h2"),t.lT);txt($("#logistica .head p"),t.lD);fillCards("#logistica .card",[[t.lt1,t.lt1D],[t.lt2,t.lt2D],[t.lt3,t.lt3D]]);
+ txt($("#contacto h2"),t.ctT);txt($("#contacto p"),t.ctD);
+ txt($('.siteFoot p[data-i="footMini"]'),t.footMini);txt($('.footBottom span[data-i="footDisclaimer"]'),t.footDisclaimer);txt($("#foot"),"© 2026 Maniw & Co S.A. de C.V.")
 }
-
-apply();
-$$('.lang button').forEach(b=>b.addEventListener('click',()=>setTimeout(apply,40)));
-window.addEventListener('load',()=>setTimeout(apply,80));
-setTimeout(apply,120);
+apply();$$(".lang button").forEach(b=>b.addEventListener("click",()=>setTimeout(apply,40)));window.addEventListener("load",()=>setTimeout(apply,80));setTimeout(apply,120);      
 })();
 </script>
 </body></html>
