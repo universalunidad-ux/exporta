@@ -138,126 +138,468 @@
   .footGrid{padding:28px 0 16px}.footNav{justify-content:flex-start}.footBottom{display:block}.footBottom span:last-child{display:block;margin-top:8px}
 }
 
-/* MW_V4_FINAL_TUNE_START */
-.top .bar>.lang{display:none!important}
-.bar{grid-template-columns:auto 1fr!important}
 
-.heroIn{justify-content:center!important;align-items:center!important;text-align:center!important;padding-top:64px!important;padding-bottom:64px!important}
-.heroText{max-width:720px!important;margin:0 auto!important;text-align:center!important}
+
+
+
+/* MW_CLEAN_MARKET_CARDS_START */
+
+/* quitar ruido visual del hero */
+.heroWire,.heroWire2,.heroWire3,.heroWire4{display:none!important}
+.heroText{max-width:840px!important;margin:0 auto!important;text-align:center!important}
+.heroIn{justify-content:center!important;text-align:center!important}
 .hero .k{justify-content:center!important}
-.hero h1{font-size:clamp(38px,5.15vw,68px)!important;line-height:.98!important;letter-spacing:-.045em!important;margin:14px auto 14px!important;max-width:760px!important}
-.hero p{font-size:clamp(15px,1.45vw,18px)!important;line-height:1.48!important;max-width:670px!important;margin:0 auto!important;color:rgba(255,255,255,.84)!important}
-.cta{justify-content:center!important;margin-top:24px!important}
-.btn{min-height:46px}
+.hero h1{font-size:clamp(42px,5.8vw,76px)!important;line-height:.96!important}
+.hero p{max-width:820px!important;margin:0 auto!important}
 
-.marketLangPanel{margin:2px 0 18px;padding:14px;border:1px solid var(--line);background:rgba(255,251,245,.72);border-radius:22px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 12px 34px rgba(19,16,12,.035)}
-.marketLangPanel p{margin:0;color:var(--mut);font-size:13px;line-height:1.35}
-.marketLangPanel strong{display:block;color:#0f3024;font-size:11px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:3px}
-.marketLangBtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.marketLangBtn{border:1px solid var(--line);background:#fffaf4;color:#171717;border-radius:999px;padding:10px 13px;font-size:11px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
-.marketLangBtn.on{background:#101010;color:#fff;border-color:#101010}
-.marketLangBtn .flagMini{width:18px;height:13px}
+/* Clients & Markets limpio, sin panel extra */
+#clients .subK{justify-content:center!important;width:100%!important;margin-bottom:12px!important}
+#clients .head{display:block!important;text-align:center!important;margin-bottom:22px!important}
+#clients .head h2,#clients .head p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+#clients .head p{max-width:860px!important}
 
+/* cards clicables */
 .client.marketLang{cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
 .client.marketLang:hover{transform:translateY(-2px);border-color:rgba(168,214,63,.65);box-shadow:0 18px 38px rgba(19,16,12,.07)}
 .client.marketLang:focus{outline:3px solid rgba(168,214,63,.55);outline-offset:2px}
-.client.marketLang.active{border-color:rgba(168,214,63,.9);box-shadow:0 0 0 2px rgba(168,214,63,.16),0 18px 38px rgba(19,16,12,.07)}
+.client.marketLang.active{border-color:rgba(168,214,63,.95)!important;box-shadow:0 0 0 2px rgba(168,214,63,.18),0 18px 38px rgba(19,16,12,.07)!important}
 
-.scandiModal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(10,9,7,.56);backdrop-filter:blur(8px)}
-.scandiModal.show{display:flex}
-.scandiBox{width:min(520px,94vw);background:#fffaf4;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 28px 80px rgba(0,0,0,.28)}
-.scandiBox h3{margin:0 0 8px;font-family:"Playfair Display",Georgia,serif;font-size:34px;line-height:.98;color:#0f3024}
-.scandiBox p{margin:0 0 16px;color:var(--mut)}
-.scandiOpts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.scandiOpts button{border:1px solid var(--line);background:#fff;border-radius:18px;padding:14px 10px;font-weight:950;cursor:pointer}
-.scandiClose{margin-top:12px;width:100%;border:0;background:#101010;color:#fff;border-radius:999px;padding:12px;font-weight:950;cursor:pointer}
+/* Commercial Portfolio centrado */
+#portfolio .head{display:block!important;text-align:center!important;margin-bottom:22px!important}
+#portfolio .head h2,#portfolio .head p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+#portfolio .head p{max-width:760px!important}
 
+/* modal */
+.marketModal{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(10,9,7,.58);backdrop-filter:blur(8px)}
+.marketModal.show{display:flex}
+.marketBox{width:min(540px,94vw);background:#fffaf4;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.marketBox h3{margin:0 0 8px;font-family:"Playfair Display",Georgia,serif;font-size:34px;line-height:.98;color:#0f3024}
+.marketBox p{margin:0 0 16px;color:var(--mut)}
+.marketOpts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.marketOpts button{border:1px solid var(--line);background:#fff;border-radius:18px;padding:14px 10px;font-weight:950;cursor:pointer}
+.marketOpts button:hover{border-color:rgba(168,214,63,.8)}
+.marketClose{margin-top:12px;width:100%;border:0;background:#101010;color:#fff;border-radius:999px;padding:12px;font-weight:950;cursor:pointer}
+
+/* 4.png: menos aire vertical */
+.prodVisual{margin-top:10px!important}
+.prodVisual figure{padding:8px!important}
+.prodVisual img{width:100%!important;height:82px!important;object-fit:contain!important;background:#fff!important;border-radius:10px!important}
+.prodVisual figcaption{margin-top:4px!important;font-size:9.5px!important}
+
+/* 1.png: mucho más grande y legible */
+.allianceImage .wrap{width:min(1320px,96vw)!important}
+.allianceImage figure{overflow:hidden!important;padding:10px!important}
+.allianceImage img{width:175%!important;max-width:none!important;max-height:none!important;margin-left:50%!important;transform:translateX(-50%)!important;object-fit:contain!important;background:#fff!important;border-radius:16px!important}
+
+/* Real Operations centrado si aplica */
 #gallery .head{display:block!important;text-align:center!important;margin-bottom:20px!important}
-#gallery .head h2{text-align:center!important;margin:0 auto!important}
-#gallery .head p{text-align:center!important;margin:9px auto 0!important;max-width:700px!important}
-.note{display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important}
-.note:before{content:"";width:20px;height:20px;flex:0 0 20px;background-repeat:no-repeat;background-size:20px 20px;background-image:url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%230f3024' stroke-width='1.8'/%3E%3Cpath d='M8 12.4l2.4 2.4L16.4 9' stroke='%23a8d63f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+#gallery .head h2,#gallery .head p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
 
 @media(max-width:760px){
-  .bar{grid-template-columns:auto!important}
-  .nav{justify-content:center!important}
-  .heroIn{padding-top:42px!important;padding-bottom:52px!important}
-  .hero h1{font-size:clamp(34px,11vw,48px)!important;max-width:95vw!important}
-  .hero p{font-size:15px!important;max-width:92vw!important}
-  .marketLangPanel{display:block;text-align:center}
-  .marketLangBtns{justify-content:center;margin-top:12px}
-  .scandiOpts{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(36px,11vw,52px)!important}
+  .marketOpts{grid-template-columns:1fr!important}
+  .allianceImage img{width:140%!important}
 }
-/* MW_V4_FINAL_TUNE_END */
+/* MW_CLEAN_MARKET_CARDS_END */
+
+
+/* MW_IMAGE_LAYOUT_FIX_V1_START */
+
+/* Social Responsibility + Products: menos aire y mejor composición */
+#impact.sec{padding-top:22px!important;padding-bottom:34px!important}
+#impact .two{align-items:start!important;gap:18px!important}
+#impact .paper{padding:24px 28px!important;overflow:hidden!important}
+#impact .paper h3{margin-bottom:12px!important}
+#impact .paper p{margin-top:0!important;margin-bottom:12px!important}
+
+/* 2.png y 3.png: misma fila, pequeñas, formato limpio */
+.impactVisuals{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+  margin:14px auto 0!important;
+  max-width:520px!important;
+}
+.impactVisuals figure{
+  margin:0!important;
+  padding:8px!important;
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-radius:16px!important;
+  box-shadow:0 10px 24px rgba(18,15,11,.045)!important;
+  overflow:hidden!important;
+}
+.impactVisuals img{
+  width:100%!important;
+  height:118px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border-radius:10px!important;
+}
+.impactVisuals figcaption{
+  margin-top:6px!important;
+  text-align:center!important;
+  color:var(--mut)!important;
+  font-size:10px!important;
+  font-weight:850!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  line-height:1.15!important;
+}
+
+/* 4.png: reducir aire vertical dentro de Products */
+.prodVisual{
+  margin:12px auto 0!important;
+  max-width:520px!important;
+}
+.prodVisual figure{
+  margin:0!important;
+  padding:8px 10px!important;
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-radius:16px!important;
+  box-shadow:0 10px 24px rgba(18,15,11,.04)!important;
+  overflow:hidden!important;
+}
+.prodVisual img{
+  width:100%!important;
+  height:74px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border-radius:10px!important;
+}
+.prodVisual figcaption{
+  margin-top:5px!important;
+  text-align:center!important;
+  color:var(--mut)!important;
+  font-size:9.5px!important;
+  font-weight:850!important;
+  letter-spacing:.05em!important;
+  text-transform:uppercase!important;
+  line-height:1.15!important;
+}
+
+/* 1.png: grande pero SIN recortar ni perder formato */
+.allianceImage{
+  padding:22px 0 26px!important;
+  background:var(--bg)!important;
+  border-top:1px solid var(--line)!important;
+}
+.allianceImage .wrap{
+  width:min(1280px,96vw)!important;
+}
+.allianceImage figure{
+  margin:0 auto!important;
+  padding:14px 16px!important;
+  background:#fffaf4!important;
+  border:1px solid var(--line)!important;
+  border-radius:24px!important;
+  box-shadow:0 18px 44px rgba(18,15,11,.055)!important;
+  overflow:visible!important;
+}
+.allianceImage img{
+  display:block!important;
+  width:100%!important;
+  max-width:1180px!important;
+  max-height:520px!important;
+  margin:0 auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  background:#fff!important;
+  border-radius:16px!important;
+}
+.allianceImage figcaption{
+  margin-top:10px!important;
+  color:var(--mut)!important;
+  text-align:center!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+/* Evitar que una imagen mala estire toda la sección */
+#impact img,#alliancesImage img{image-rendering:auto}
+
+@media(max-width:760px){
+  #impact .two{gap:14px!important}
+  .impactVisuals{grid-template-columns:1fr!important;max-width:360px!important}
+  .impactVisuals img{height:120px!important}
+  .prodVisual img{height:70px!important}
+  .allianceImage .wrap{width:min(96vw,760px)!important}
+  .allianceImage img{max-height:360px!important}
+}
+
+/* MW_IMAGE_LAYOUT_FIX_V1_END */
+
+
+/* MW_HEADER_LANG_REMOVE_COPY_FIX_START */
+
+/* Header sin traductor */
+.top .bar{grid-template-columns:auto 1fr!important}
+.top .nav{justify-content:center!important}
+
+/* Clientes y mercados: más aire entre título y subtítulo */
+#clients .head{margin-bottom:24px!important}
+#clients .head h2{margin-bottom:14px!important}
+#clients .head p{
+  margin-top:0!important;
+  line-height:1.42!important;
+  max-width:880px!important;
+}
+
+/* MW_HEADER_LANG_REMOVE_COPY_FIX_END */
+
+
+
+
+/* MW_HINT_FINAL_SAFE_START */
+#clients .head p{display:none!important}
+#clients .head{margin-bottom:18px!important}
+#clients .head h2{margin-bottom:0!important}
+
+.marketHintTop{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:4px auto 20px!important;
+  color:var(--deep)!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  letter-spacing:.09em!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+}
+
+.marketHintBottom{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  margin:18px auto 0!important;
+  color:var(--mut)!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+}
+
+.marketHintBottom svg{
+  width:18px!important;
+  height:18px!important;
+  stroke:var(--lime,#a8d63f)!important;
+  stroke-width:2.5!important;
+  fill:none!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  flex:0 0 18px!important;
+}
+
+@media(max-width:760px){
+  .marketHintTop{font-size:11px!important;line-height:1.25!important;padding:0 14px!important}
+  .marketHintBottom{display:grid!important;justify-items:center!important;gap:6px!important;font-size:10px!important;line-height:1.25!important;padding:0 14px!important}
+}
+/* MW_HINT_FINAL_SAFE_END */
 
 /*OPERATIONAL_FOCUS_V4_END*/
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap bar"><a class="brand" href="#"><img class="brandLogo" src="./IMG/mw.png" alt="MANIW & Co."><span class="brandText">MANIW & Co.</span></a><nav class="nav"><a href="#clients" id="navMarkets">Clients & Markets</a><a href="#portfolio" id="navPortfolio">Products</a><a href="#story" id="navStory">Corporate</a><a href="#logistics" id="navLogistics">Logistics</a><a href="#contact" id="navContact">Contact</a></nav><div class="lang"><span class="langHint" id="langLabel">Language</span><button id="langEs"><span class="flagMini mx"></span><b>ES</b></button><button id="langEn" class="on"><span class="flagMini us"></span><b>EN</b></button></div></div></header>
+<header class="top"><div class="wrap bar"><a class="brand" href="#"><img class="brandLogo" src="./IMG/mw.png" alt="MANIW & Co."><span class="brandText">MANIW & Co.</span></a><nav class="nav"><a href="#clients" id="navMarkets">Clients & Markets</a><a href="#portfolio" id="navPortfolio">Products</a><a href="#story" id="navStory">Corporate</a><a href="#logistics" id="navLogistics">Logistics</a><a href="#contact" id="navContact">Contact</a></nav></div></header>
 <main>
 <section class="hero" id="hero"><div class="heroBg"><img src="./IMG/reunion.jpeg" alt="" loading="eager" decoding="async" fetchpriority="high"></div><span class="heroWire"></span><span class="heroWire2"></span><span class="heroWire3"></span><span class="heroWire4"></span><div class="heroIn"><div class="heroText"><span class="k" id="heroK">MANIW & Co. Global Exports</span><h1 id="heroTitle">Cultivating Mexico’s premium harvest for global markets.</h1><p id="heroLead">We connect artisans, farmers, small producers and social entrepreneurs with international markets through product adaptation, commercial documentation and integrated export logistics.</p><div class="cta"><a class="btn a" href="#portfolio" id="heroBtnA">Explore products</a><a class="btn b" href="#logistics" id="heroBtnB">Global logistics</a></div></div></div></section>
 
-<section class="sec tight" id="clients"><div class="wrap"><span class="subK" id="clientsK">Global Presence</span><div class="head"><div><h2 id="clientsH">Clients & Markets</h2><p id="clientsP">Strategic commercial relationships across North America, Europe and Asia.</p></div></div><!-- MW_MARKET_LANG_PANEL_START -->
-<div class="marketLangPanel" id="marketLangPanel"><div><strong>Market language</strong><p>Choose a market or language. Scandinavia opens a specific selector.</p></div><div class="marketLangBtns"><button class="marketLangBtn" id="langPanelEs" data-lang="es"><span class="flagMini mx"></span>ES</button><button class="marketLangBtn" id="langPanelEn" data-lang="en"><span class="flagMini us"></span>EN</button><button class="marketLangBtn" id="langPanelJa" data-lang="ja"><span class="flagMini jp"></span>JA</button></div></div>
-<!-- MW_MARKET_LANG_PANEL_END --><div class="clientsGrid"><article class="client marketLang" role="button" tabindex="0" data-market="scandinavia"><span class="flag scandinavia"></span><div><b id="c1">Scandinavia Region</b><span id="c1s">Nordic commercial network</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="ja"><span class="flag jp"></span><div><b id="c2">Japan</b><span id="c2s">Premium quality market</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag us"></span><div><b id="c3">USA</b><span id="c3s">Retail and food service</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="es"><span class="flag es"></span><div><b id="c4">Spain</b><span id="c4s">European distribution</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag kr"></span><div><b id="c5">Korea</b><span id="c5s">High-value commercial link</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag cn"></span><div><b id="c6">China</b><span id="c6s">Strategic scale market</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag ca"></span><div><b id="c7">Canada</b><span id="c7s">North American operations</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag de"></span><div><b id="c8">Germany</b><span id="c8s">Industrial and trading hub</span></div></article></div></div></section>
+<section class="sec tight" id="clients"><div class="wrap"><span class="subK" id="clientsK">Global Presence</span><div class="head"><div><h2 id="clientsH">Clients & Markets</h2><p id="clientsP">Strategic commercial relationships across North America, Europe and Asia.</p></div></div><!-- MW_MARKET_HINT_TOP_START -->
+<div class="marketHintTop" id="marketHintTop"><span id="marketHintTopText">Elige el idioma de tu preferencia.</span></div>
+<!-- MW_MARKET_HINT_TOP_END -->
+<div class="clientsGrid"><article class="client marketLang" role="button" tabindex="0" data-market="scandinavia"><span class="flag scandinavia"></span><div><b id="c1">Scandinavia Region</b><span id="c1s">Nordic commercial network</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="ja"><span class="flag jp"></span><div><b id="c2">Japan</b><span id="c2s">Premium quality market</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="en"><span class="flag us"></span><div><b id="c3">USA</b><span id="c3s">Retail and food service</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="es"><span class="flag es"></span><div><b id="c4">Spain</b><span id="c4s">European distribution</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="ko"><span class="flag kr"></span><div><b id="c5">Korea</b><span id="c5s">High-value commercial link</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="zh"><span class="flag cn"></span><div><b id="c6">China</b><span id="c6s">Strategic scale market</span></div></article><article class="client marketLang" role="button" tabindex="0" data-market="canada"><span class="flag ca"></span><div><b id="c7">Canada</b><span id="c7s">North American operations</span></div></article><article class="client marketLang" role="button" tabindex="0" data-set-lang="de"><span class="flag de"></span><div><b id="c8">Germany</b><span id="c8s">Industrial and trading hub</span></div></article></div><!-- MW_MARKET_HINT_BOTTOM_START -->
+<div class="marketHintBottom" id="marketHintBottom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span id="marketHintBottomText">Mercados y destinos comerciales activos.</span></div>
+<!-- MW_MARKET_HINT_BOTTOM_END -->
+</div></section>
 
 <section class="sec" id="portfolio"><div class="wrap"><div class="head"><div><h2 id="portfolioH">Commercial Portfolio</h2><p id="portfolioP">Curated Mexican products prepared for retail, food service and international distribution.</p></div></div><div class="portfolio"><article class="pCard"><img src="./IMG/aguacate.jpeg" alt="Fresh produce" loading="lazy"><div class="pTxt"><small id="p1k">Category</small><h3 id="p1t">Fresh Produce</h3><p id="p1d">Avocados, fruits and export-grade agricultural goods.</p></div></article><article class="pCard"><img src="./IMG/empaque.jpeg" alt="Mexican pantry products" loading="lazy"><div class="pTxt"><small id="p2k">Category</small><h3 id="p2t">Sauces & Pantry</h3><p id="p2d">Mole, dried chiles, chile paste, Mexican sauces, seasonings and marinades.</p></div></article><article class="pCard"><img src="./IMG/embalaje.jpeg" alt="Quality control and packaging" loading="lazy"><div class="pTxt"><small id="p3k">Operations</small><h3 id="p3t">Quality Control</h3><p id="p3d">Packaging, formulation, labeling and destination-market requirements.</p></div></article></div></div></section>
 
 <section class="sec" id="story"><div class="wrap two"><article class="paper"><h3 id="corpH">Corporate</h3><p id="corpP1">We were born in 2014 as a social project with artisans from Guerrero. In 2017 we evolved to be the commercial arm of artisans, farmers, small producers and social entrepreneurs to reach international markets in a professional and appropriate way.</p><p id="corpP2">From the agricultural and artisanal sector we export certified Mexican products and develop innovative products for new international markets. We also carry out the necessary export logistics operations to successfully deliver goods to the desired destination port.</p></article><article class="paper"><h3 id="addH">Added Value</h3><p id="addP">Our added value is to advise the producer on the total adaptation of the product so that it achieves the requirements and quality of the destination market.</p><ul><li id="addL1">Packaging adaptation.</li><li id="addL2">Formulation and presentation.</li><li id="addL3">Labeling and buyer requirements.</li><li id="addL4">Commercial and technical documentation.</li></ul></article></div></section>
 
-<section class="sec tight" id="impact"><div class="wrap two"><article class="paper"><h3 id="socH">Social Responsibility</h3><p id="socP1">The linking with Civil Society Organizations is key to articulate and promote actions to support sectors with limited resources or in conditions susceptible to marginalization and poverty.</p><p id="socP2">During these years MW Company has collaborated with different foundations to achieve a more equitable, supportive and prosperous society. Our business vision goes hand in hand with the commitment to build a common good for our country.</p></article><article class="paper"><h3 id="prodH">Products</h3><ul><li id="prod1">Retail and food service: corn tortillas, flour tortillas and Mexican pantry brands.</li><li id="prod2">San Marcos, Clemente Jacques, La Anita, El Yucateco and Susalia products.</li><li id="prod3">Mole, dried chiles, whole and flakes, chile paste, Mexican sauces, seasonings and marinades.</li><li id="prod4">Frozen: tamales, guacamole, pulp and whole fruits.</li><li id="prod5">Pulp (concentrate): cucumber, tomatillo, poblano pepper, jalapeño pepper and tomato. Beer: Grupo Modelo beers.</li></ul></article></div></section>
+<section class="sec tight" id="impact"><div class="wrap two"><article class="paper"><h3 id="socH">Social Responsibility</h3><p id="socP1">The linking with Civil Society Organizations is key to articulate and promote actions to support sectors with limited resources or in conditions susceptible to marginalization and poverty.</p><p id="socP2">During these years MW Company has collaborated with different foundations to achieve a more equitable, supportive and prosperous society. Our business vision goes hand in hand with the commitment to build a common good for our country.</p><div class="impactVisuals"><figure><!-- /// MANIW_EDIT_IMG: Social Responsibility imagen chica 1: ./IMG/2.png /// --><img src="./IMG/2.png" alt="Social responsibility alliance" loading="lazy"><figcaption>Social responsibility</figcaption></figure><figure><!-- /// MANIW_EDIT_IMG: Social Responsibility imagen chica 2: ./IMG/3.png /// --><img src="./IMG/3.png" alt="Institutional collaboration" loading="lazy"><figcaption>Institutional collaboration</figcaption></figure></div></article><article class="paper"><h3 id="prodH">Products</h3><ul><li id="prod1">Retail and food service: corn tortillas, flour tortillas and Mexican pantry brands.</li><li id="prod2">San Marcos, Clemente Jacques, La Anita, El Yucateco and Susalia products.</li><li id="prod3">Mole, dried chiles, whole and flakes, chile paste, Mexican sauces, seasonings and marinades.</li><li id="prod4">Frozen: tamales, guacamole, pulp and whole fruits.</li><li id="prod5">Pulp (concentrate): cucumber, tomatillo, poblano pepper, jalapeño pepper and tomato. Beer: Grupo Modelo beers.</li></ul><div class="prodVisual"><figure><!-- /// MANIW_EDIT_IMG: Products certifications image: ./IMG/4.png /// --><img src="./IMG/4.png" alt="Certifications and product requirements" loading="lazy"><figcaption>Certifications, product standards and buyer requirements</figcaption></figure></div></article></div></section>
 
 <section class="sec darkSec" id="logistics"><div class="wrap"><span class="subK" id="logK">Global Operations</span><div class="opsWrap"><div><div class="head"><div><h2 id="logH">Uncompromising Logistics Authority.</h2><p id="logP">We orchestrate complex international movements with precision. Administrative process, customs procedures and land, sea or air transportation are coordinated in a single export operation.</p></div></div><div class="opsGrid"><article class="op"><b id="op1b">Sea</b><h3 id="op1h">Ocean Freight</h3><p id="op1p">Reefer containers, consolidated cargo and routing coordination.</p></article><article class="op"><b id="op2b">Air</b><h3 id="op2h">Air Cargo</h3><p id="op2p">Expedited perishables, urgent samples and premium handling.</p></article><article class="op"><b id="op3b">Land</b><h3 id="op3h">Ground Transport</h3><p id="op3p">Cross-border and domestic logistics with specialized coordination.</p></article><article class="op"><b id="op4b">Docs</b><h3 id="op4h">Customs & Docs</h3><p id="op4p">Commercial invoice, labels, technical documentation and seamless clearance.</p></article></div><a class="opsBtn" href="#contact" id="logBtn">Consult logistics team</a></div><div class="opsShots"><figure class="shot"><img src="./IMG/envios.jpeg" alt="" loading="lazy"><figcaption id="lgf1">Export logistics</figcaption></figure><figure class="shot"><img src="./IMG/embalaje.jpeg" alt="" loading="lazy"><figcaption id="lgf2">Quality control</figcaption></figure></div></div></div></section>
 
 <section class="sec real" id="gallery"><div class="wrap"><div class="head"><div><h2 id="realH">Real Operations</h2><p id="realP">A glimpse into our daily commercial and logistical activities worldwide.</p></div></div><div class="realWrap"><figure class="shot realBig"><img src="./IMG/eventos.jpeg" alt="" loading="lazy"><figcaption id="f1">Commercial forums</figcaption></figure><div class="realRight"><figure class="shot"><img src="./IMG/ponencia.jpeg" alt="" loading="lazy"><figcaption id="f2">Trade conferences</figcaption></figure><figure class="shot"><img src="./IMG/asia.jpeg" alt="" loading="lazy"><figcaption id="f3">Commercial visits</figcaption></figure><figure class="shot realTall"><img src="./IMG/alianzap.jpeg" alt="" loading="lazy"><figcaption id="f4">Collaborative ecosystem</figcaption></figure></div></div><div class="note" id="realNote">Certifications and documents depend on product, destination and buyer requirements.</div></div></section>
+<!-- MW_ALLIANCE_IMAGE_START -->
+<section class="allianceImage" id="alliancesImage"><div class="wrap"><figure><!-- /// MANIW_EDIT_IMG: Alliances / chambers / certifications strip: ./IMG/1.png /// --><img src="./IMG/1.png" alt="MANIW alliances and certifications" loading="lazy"><figcaption>Business chambers, institutional allies, certifications and commercial ecosystem.</figcaption></figure></div></section>
+<!-- MW_ALLIANCE_IMAGE_END -->
+
 
 <section class="sec" id="contact"><div class="wrap"><div class="contactCard"><div><h2 id="contactH">Initiate Trade</h2><p id="contactP">Connect with our commercial director to discuss container volumes, seasonal availability, exact specifications and pricing terms.</p><div class="contactMeta"><div><b id="meta1">Direct contact</b></div><div id="meta2">IRAIS RIVERA REYES · Chairwoman & Founder</div><div id="meta3">Maniw & Co. S.A. de C.V. · Mexican Worldwide Agroexporter</div><div id="meta4">WTC Mexico, 28 Floor, Office 16, Mexico City</div><div id="meta5">Mobile: +52 5545045006 · irais@mwcompany.com.mx</div></div></div><div class="contactActions"><a class="btn w" id="wa" target="_blank" rel="noopener">WhatsApp</a><a class="btn e" id="mail">Email</a></div></div></div></section>
 </main>
 
-<!-- MW_SCANDI_MODAL_START -->
-<div class="scandiModal" id="scandiModal" aria-hidden="true"><div class="scandiBox" role="dialog" aria-modal="true" aria-labelledby="scandiTitle"><h3 id="scandiTitle">Scandinavia Region</h3><p>Choose the working language for this market context.</p><div class="scandiOpts"><button data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="ja">Japan / JA</button></div><button class="scandiClose" id="scandiClose" type="button">Close</button></div></div>
-<!-- MW_SCANDI_MODAL_END --><footer class="siteFoot"><div class="wrap footGrid"><div><a class="footBrand" href="#"><img src="./IMG/mw.png" alt="MANIW & Co."><span>MANIW & Co.</span></a><p class="footDesc" id="footDesc">Professional export bridge between Mexican producers and international markets.</p></div><nav class="footNav"><a href="#clients" id="footNav1">Markets</a><a href="#portfolio" id="footNav2">Products</a><a href="#story" id="footNav3">Corporate</a><a href="#logistics" id="footNav4">Logistics</a><a href="#contact" id="footNav5">Contact</a></nav></div><div class="wrap footBottom"><span id="footYear"></span><span id="footNote">Worldwide agroexport operations with product adaptation, documentation and integrated logistics.</span></div></footer>
-<script>(()=>{const $=s=>document.querySelector(s),PHONE="5215545045006",MAIL="irais@mwcompany.com.mx",msgEN="Hello Irais, I would like to know more about MANIW & Co., available products, markets, export volumes and quotation process.",msgES="Hola Irais, me gustaría conocer más sobre MANIW & Co., productos disponibles, mercados, volúmenes de exportación y proceso de cotización.";const T={en:{langLabel:"Language",navMarkets:"Clients & Markets",navPortfolio:"Products",navStory:"Corporate",navLogistics:"Logistics",navContact:"Contact",heroK:"MANIW & Co. Global Exports",heroTitle:"Cultivating Mexico’s premium harvest for global markets.",heroLead:"We connect artisans, farmers, small producers and social entrepreneurs with international markets through product adaptation, commercial documentation and integrated export logistics.",heroBtnA:"Explore products",heroBtnB:"Global logistics",clientsK:"Global Presence",clientsH:"Clients & Markets",clientsP:"Strategic commercial relationships across North America, Europe and Asia.",c1:"Scandinavia Region",c1s:"Nordic commercial network",c2:"Japan",c2s:"Premium quality market",c3:"USA",c3s:"Retail and food service",c4:"Spain",c4s:"European distribution",c5:"Korea",c5s:"High-value commercial link",c6:"China",c6s:"Strategic scale market",c7:"Canada",c7s:"North American operations",c8:"Germany",c8s:"Industrial and trading hub",portfolioH:"Commercial Portfolio",portfolioP:"Curated Mexican products prepared for retail, food service and international distribution.",p1k:"Category",p1t:"Fresh Produce",p1d:"Avocados, fruits and export-grade agricultural goods.",p2k:"Category",p2t:"Sauces & Pantry",p2d:"Mole, dried chiles, chile paste, Mexican sauces, seasonings and marinades.",p3k:"Operations",p3t:"Quality Control",p3d:"Packaging, formulation, labeling and destination-market requirements.",corpH:"Corporate",corpP1:"We were born in 2014 as a social project with artisans from Guerrero. In 2017 we evolved to be the commercial arm of artisans, farmers, small producers and social entrepreneurs to reach international markets in a professional and appropriate way.",corpP2:"From the agricultural and artisanal sector we export certified Mexican products and develop innovative products for new international markets. We also carry out the necessary export logistics operations to successfully deliver goods to the desired destination port.",addH:"Added Value",addP:"Our added value is to advise the producer on the total adaptation of the product so that it achieves the requirements and quality of the destination market.",addL1:"Packaging adaptation.",addL2:"Formulation and presentation.",addL3:"Labeling and buyer requirements.",addL4:"Commercial and technical documentation.",socH:"Social Responsibility",socP1:"The linking with Civil Society Organizations is key to articulate and promote actions to support sectors with limited resources or in conditions susceptible to marginalization and poverty.",socP2:"During these years MW Company has collaborated with different foundations to achieve a more equitable, supportive and prosperous society. Our business vision goes hand in hand with the commitment to build a common good for our country.",prodH:"Products",prod1:"Retail and food service: corn tortillas, flour tortillas and Mexican pantry brands.",prod2:"San Marcos, Clemente Jacques, La Anita, El Yucateco and Susalia products.",prod3:"Mole, dried chiles, whole and flakes, chile paste, Mexican sauces, seasonings and marinades.",prod4:"Frozen: tamales, guacamole, pulp and whole fruits.",prod5:"Pulp (concentrate): cucumber, tomatillo, poblano pepper, jalapeño pepper and tomato. Beer: Grupo Modelo beers.",logK:"Global Operations",logH:"Uncompromising Logistics Authority.",logP:"We orchestrate complex international movements with precision. Administrative process, customs procedures and land, sea or air transportation are coordinated in a single export operation.",op1b:"Sea",op1h:"Ocean Freight",op1p:"Reefer containers, consolidated cargo and routing coordination.",op2b:"Air",op2h:"Air Cargo",op2p:"Expedited perishables, urgent samples and premium handling.",op3b:"Land",op3h:"Ground Transport",op3p:"Cross-border and domestic logistics with specialized coordination.",op4b:"Docs",op4h:"Customs & Docs",op4p:"Commercial invoice, labels, technical documentation and seamless clearance.",logBtn:"Consult logistics team",lgf1:"Export logistics",lgf2:"Quality control",realH:"Real Operations",realP:"A glimpse into our daily commercial and logistical activities worldwide.",f1:"Commercial forums",f2:"Trade conferences",f3:"Commercial visits",f4:"Collaborative ecosystem",realNote:"Certifications and documents depend on product, destination and buyer requirements.",contactH:"Initiate Trade",contactP:"Connect with our commercial director to discuss container volumes, seasonal availability, exact specifications and pricing terms.",meta1:"Direct contact",meta2:"IRAIS RIVERA REYES · Chairwoman & Founder",meta3:"Maniw & Co. S.A. de C.V. · Mexican Worldwide Agroexporter",meta4:"WTC Mexico, 28 Floor, Office 16, Mexico City",meta5:"Mobile: +52 5545045006 · irais@mwcompany.com.mx",footDesc:"Professional export bridge between Mexican producers and international markets.",footNav1:"Markets",footNav2:"Products",footNav3:"Corporate",footNav4:"Logistics",footNav5:"Contact",footNote:"Worldwide agroexport operations with product adaptation, documentation and integrated logistics."},es:{langLabel:"Idioma",navMarkets:"Clientes y mercados",navPortfolio:"Productos",navStory:"Corporativo",navLogistics:"Logística",navContact:"Contacto",heroK:"MANIW & Co. Exportaciones Globales",heroTitle:"Cultivando la cosecha premium de México para mercados globales.",heroLead:"Conectamos artesanos, agricultores, pequeños productores y emprendedores sociales con mercados internacionales mediante adaptación de producto, documentación comercial y logística exportadora integrada.",heroBtnA:"Explorar productos",heroBtnB:"Logística global",clientsK:"Presencia global",clientsH:"Clientes y mercados",clientsP:"Relaciones comerciales estratégicas en Norteamérica, Europa y Asia.",c1:"Región Escandinava",c1s:"Red comercial nórdica",c2:"Japón",c2s:"Mercado de calidad premium",c3:"Estados Unidos",c3s:"Retail y food service",c4:"España",c4s:"Distribución europea",c5:"Corea",c5s:"Vínculo comercial de alto valor",c6:"China",c6s:"Mercado estratégico de escala",c7:"Canadá",c7s:"Operaciones norteamericanas",c8:"Alemania",c8s:"Hub industrial y comercial",portfolioH:"Portafolio Comercial",portfolioP:"Productos mexicanos curados para retail, food service y distribución internacional.",p1k:"Categoría",p1t:"Producto fresco",p1d:"Aguacates, frutas y bienes agrícolas grado exportación.",p2k:"Categoría",p2t:"Salsas y despensa",p2d:"Mole, chiles secos, pasta de chiles, salsas mexicanas, sazonadores y marinados.",p3k:"Operaciones",p3t:"Control de calidad",p3d:"Empaque, formulación, etiquetado y requisitos del mercado destino.",corpH:"Corporativo",corpP1:"Nacimos en 2014 como un proyecto social con artesanos de Guerrero. En 2017 evolucionamos para ser el brazo comercial de artesanos, agricultores, pequeños productores y emprendedores sociales para llegar a mercados internacionales de forma profesional y adecuada.",corpP2:"Desde el sector agrícola y artesanal exportamos productos mexicanos certificados y desarrollamos productos innovadores para nuevos mercados internacionales. También realizamos las operaciones logísticas de exportación necesarias para entregar exitosamente la mercancía al puerto de destino deseado.",addH:"Valor agregado",addP:"Nuestro valor agregado es asesorar al productor en la adaptación total del producto para que cumpla con los requisitos y la calidad del mercado destino.",addL1:"Adaptación de empaque.",addL2:"Formulación y presentación.",addL3:"Etiquetado y requerimientos del comprador.",addL4:"Documentación comercial y técnica.",socH:"Responsabilidad social",socP1:"La vinculación con Organizaciones de la Sociedad Civil es clave para articular y promover acciones de apoyo a sectores con recursos limitados o en condiciones susceptibles de marginación y pobreza.",socP2:"Durante estos años MW Company ha colaborado con diferentes fundaciones para lograr una sociedad más equitativa, solidaria y próspera. Nuestra visión de negocio va de la mano con el compromiso de construir un bien común para nuestro país.",prodH:"Productos",prod1:"Retail y food service: tortillas de maíz, tortillas de harina y marcas mexicanas de despensa.",prod2:"Productos San Marcos, Clemente Jacques, La Anita, El Yucateco y Susalia.",prod3:"Mole, chiles secos enteros y en hojuelas, pasta de chiles, salsas mexicanas, sazonadores y marinados.",prod4:"Congelados: tamales, guacamole, pulpas y frutas enteras.",prod5:"Pulpa concentrada: pepino, tomatillo, chile poblano, chile jalapeño y tomate. Cerveza: cervezas Grupo Modelo.",logK:"Operaciones globales",logH:"Autoridad logística sin concesiones.",logP:"Orquestamos movimientos internacionales complejos con precisión. El proceso administrativo, trámites aduanales y transporte terrestre, marítimo o aéreo se coordinan en una sola operación exportadora.",op1b:"Mar",op1h:"Flete marítimo",op1p:"Contenedores refrigerados, carga consolidada y coordinación de rutas.",op2b:"Aire",op2h:"Carga aérea",op2p:"Perecederos urgentes, muestras y manejo premium.",op3b:"Tierra",op3h:"Transporte terrestre",op3p:"Logística fronteriza y nacional con coordinación especializada.",op4b:"Docs",op4h:"Aduanas y docs",op4p:"Factura comercial, etiquetas, documentación técnica y despacho fluido.",logBtn:"Consultar al equipo logístico",lgf1:"Logística de exportación",lgf2:"Control de calidad",realH:"Operaciones reales",realP:"Un vistazo a nuestras actividades comerciales y logísticas diarias a nivel mundial.",f1:"Foros comerciales",f2:"Conferencias comerciales",f3:"Visitas comerciales",f4:"Ecosistema colaborativo",realNote:"Las certificaciones y documentos dependen del producto, destino y requerimientos del comprador.",contactH:"Iniciar comercio",contactP:"Conecta con nuestra directora comercial para revisar volúmenes de contenedor, disponibilidad estacional, especificaciones exactas y términos de precio.",meta1:"Contacto directo",meta2:"IRAIS RIVERA REYES · Chairwoman & Founder",meta3:"Maniw & Co. S.A. de C.V. · Agroexportadora mexicana mundial",meta4:"WTC México, Piso 28, Oficina 16, Ciudad de México",meta5:"Móvil: +52 5545045006 · irais@mwcompany.com.mx",footDesc:"Puente exportador profesional entre productores mexicanos y mercados internacionales.",footNav1:"Mercados",footNav2:"Productos",footNav3:"Corporativo",footNav4:"Logística",footNav5:"Contacto",footNote:"Operaciones agroexportadoras con adaptación de producto, documentación y logística integrada."}};const ids=Object.keys(T.en);function setTxt(id,val){const el=document.getElementById(id);if(el&&val!=null)el.textContent=val}function applyLang(l){const t=T[l]||T.en;ids.forEach(k=>setTxt(k,t[k]));localStorage.setItem("mw_lang",l);const es=$("#langEs"),en=$("#langEn");if(es&&en){es.classList.toggle("on",l==="es");en.classList.toggle("on",l==="en")}document.documentElement.lang=l==="es"?"es":"en";const wa=$("#wa"),mail=$("#mail");if(wa)wa.href=`https://wa.me/${PHONE}?text=${encodeURIComponent(l==="es"?msgES:msgEN)}`;if(mail)mail.href=`mailto:${MAIL}?subject=${encodeURIComponent(l==="es"?"Consulta comercial - MANIW & Co.":"Commercial inquiry - MANIW & Co.")}&body=${encodeURIComponent(l==="es"?"Hola Irais,
+<!-- MW_MARKET_MODAL_START -->
+<div class="marketModal" id="marketModal" aria-hidden="true"><div class="marketBox" role="dialog" aria-modal="true" aria-labelledby="marketModalTitle"><h3 id="marketModalTitle">Choose language</h3><p id="marketModalCopy">Select the working language for this market.</p><div class="marketOpts" id="marketModalOptions"></div><button class="marketClose" id="marketModalClose" type="button">Close</button></div></div>
+<!-- MW_MARKET_MODAL_END --><footer class="siteFoot"><div class="wrap footGrid"><div><a class="footBrand" href="#"><img src="./IMG/mw.png" alt="MANIW & Co."><span>MANIW & Co.</span></a><p class="footDesc" id="footDesc">Professional export bridge between Mexican producers and international markets.</p></div><nav class="footNav"><a href="#clients" id="footNav1">Markets</a><a href="#portfolio" id="footNav2">Products</a><a href="#story" id="footNav3">Corporate</a><a href="#logistics" id="footNav4">Logistics</a><a href="#contact" id="footNav5">Contact</a></nav></div><div class="wrap footBottom"><span id="footYear"></span><span id="footNote">Worldwide agroexport operations with product adaptation, documentation and integrated logistics.</span></div></footer>
+<script>
+(()=> {
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const PHONE="5215545045006", MAIL="irais@mwcompany.com.mx";
 
-Me gustaría conocer más sobre MANIW & Co., productos disponibles, mercados, volúmenes de exportación y proceso de cotización.
+  const BASE={
+    navMarkets:"Clients & Markets",navPortfolio:"Products",navStory:"Corporate",navLogistics:"Logistics",navContact:"Contact",
+    heroK:"MANIW & Co. Global Exports",
+    heroTitle:"Cultivating Mexico’s premium harvest for global markets.",
+    heroLead:"We connect artisans, farmers, small producers and social entrepreneurs with international markets through product adaptation, commercial documentation and integrated export logistics.",
+    heroBtnA:"Explore products",heroBtnB:"Global logistics",
+    clientsK:"Global Presence",
+    clientsH:"Clients & Markets",
+    clientsP:"Choose a market to change the page language.",
+    c1:"Scandinavia Region",c1s:"English / Swedish / Danish / Norwegian",
+    c2:"Japan",c2s:"Premium quality market",
+    c3:"USA",c3s:"Retail and food service",
+    c4:"Spain",c4s:"European distribution",
+    c5:"Korea",c5s:"High-value commercial link",
+    c6:"China",c6s:"Strategic scale market",
+    c7:"Canada",c7s:"English / French market options",
+    c8:"Germany",c8s:"Industrial and trading hub",
+    portfolioH:"Commercial Portfolio",
+    portfolioP:"Curated Mexican products prepared for retail, food service and international distribution.",
+    p1k:"Category",p1t:"Fresh Produce",p1d:"Avocados, fruits and export-grade agricultural goods.",
+    p2k:"Category",p2t:"Sauces & Pantry",p2d:"Mole, dried chiles, chile paste, Mexican sauces, seasonings and marinades.",
+    p3k:"Operations",p3t:"Quality Control",p3d:"Packaging, formulation, labeling and destination-market requirements.",
+    corpH:"Corporate",addH:"Added Value",socH:"Social Responsibility",prodH:"Products",
+    logK:"Global Operations",logH:"Uncompromising Logistics Authority.",
+    realH:"Real Operations",realP:"A glimpse into our daily commercial and logistical activities worldwide.",
+    realNote:"Certifications and documents depend on product, destination and buyer requirements.",
+    contactH:"Initiate Trade",
+    footNav1:"Markets",footNav2:"Products",footNav3:"Corporate",footNav4:"Logistics",footNav5:"Contact"
+  };
 
-Gracias.":"Hello Irais,
+  const I18N={
+    en:{},
+    es:{navMarkets:"Clientes y mercados",navPortfolio:"Productos",navStory:"Corporativo",navLogistics:"Logística",navContact:"Contacto",heroK:"MANIW & Co. Exportaciones Globales",heroTitle:"Cultivando la cosecha premium de México para mercados globales.",heroLead:"Conectamos artesanos, agricultores, pequeños productores y emprendedores sociales con mercados internacionales mediante adaptación de producto, documentación comercial y logística exportadora integrada.",heroBtnA:"Explorar productos",heroBtnB:"Logística global",clientsK:"Presencia global",clientsH:"Clientes y mercados",clientsP:"Elige un mercado para cambiar el idioma.",c1:"Región Escandinava",c1s:"Inglés / sueco / danés / noruego",c2:"Japón",c2s:"Mercado de calidad premium",c3:"Estados Unidos",c3s:"Retail y food service",c4:"España",c4s:"Distribución europea",c5:"Corea",c5s:"Vínculo comercial de alto valor",c6:"China",c6s:"Mercado estratégico de escala",c7:"Canadá",c7s:"Opciones inglés / francés",c8:"Alemania",c8s:"Hub industrial y comercial",portfolioH:"Portafolio Comercial",portfolioP:"Productos mexicanos curados para retail, food service y distribución internacional.",socH:"Responsabilidad social",prodH:"Productos",logK:"Operaciones globales",logH:"Autoridad logística sin concesiones.",realH:"Operaciones reales",realP:"Un vistazo a nuestras actividades comerciales y logísticas diarias a nivel mundial.",realNote:"Las certificaciones y documentos dependen del producto, destino y requerimientos del comprador.",contactH:"Iniciar comercio",footNav1:"Mercados",footNav2:"Productos",footNav3:"Corporativo",footNav4:"Logística",footNav5:"Contacto"},
+    fr:{clientsH:"Clients et marchés",clientsP:"Marchés clients et destinations commerciales actives. Choisissez une carte de marché pour afficher cette page dans sa langue de travail.",heroTitle:"Récolte mexicaine premium pour les marchés mondiaux.",heroLead:"Nous connectons les producteurs mexicains aux acheteurs internationaux grâce à l’adaptation produit, la documentation commerciale et la logistique intégrée.",c7s:"Options anglais / français",contactH:"Initier le commerce"},
+    de:{clientsH:"Kunden & Märkte",clientsP:"Kundenmärkte und aktive Handelsziele. Wählen Sie eine Marktkarte, um diese Seite in der passenden Arbeitssprache anzuzeigen.",heroTitle:"Premium-Ernte aus Mexiko für globale Märkte.",heroLead:"Wir verbinden mexikanische Produzenten mit internationalen Käufern durch Produktanpassung, Handelsdokumentation und integrierte Logistik.",c8:"Deutschland",c8s:"Industrie- und Handelszentrum",contactH:"Handel starten"},
+    ja:{clientsH:"顧客・市場",clientsP:"主要な顧客市場と商業展開先。市場カードを選択して、最適な業務言語で表示します。",heroTitle:"世界市場へ届けるメキシコのプレミアム産品。",heroLead:"製品適応、商業書類、統合物流を通じて、メキシコの生産者と海外バイヤーをつなぎます。",c2:"日本",c2s:"プレミアム品質市場",contactH:"商談を開始"},
+    ko:{clientsH:"고객 및 시장",clientsP:"주요 고객 시장과 상업 목적지입니다. 시장 카드를 선택하면 가장 적합한 업무 언어로 표시됩니다.",heroTitle:"세계 시장을 위한 멕시코 프리미엄 농산물.",heroLead:"제품 현지화, 상업 문서, 통합 물류를 통해 멕시코 생산자와 해외 바이어를 연결합니다.",c5:"한국",c5s:"고부가가치 상업 연결",contactH:"거래 시작"},
+    zh:{clientsH:"客户与市场",clientsP:"主要客户市场与商业目的地。选择市场卡片即可用最合适的工作语言浏览页面。",heroTitle:"面向全球市场的墨西哥优质农产。",heroLead:"通过产品适配、商业文件和一体化物流，连接墨西哥生产者与国际买家。",c6:"中国",c6s:"战略规模市场",contactH:"开启贸易"},
+    sv:{clientsH:"Kunder och marknader",clientsP:"Välj en marknad för att visa sidan på lämpligt arbetsspråk.",c1:"Skandinavien",c1s:"Engelska / svenska / danska / norska"},
+    da:{clientsH:"Kunder og markeder",clientsP:"Vælg et marked for at se siden på relevant arbejdssprog.",c1:"Skandinavien",c1s:"Engelsk / svensk / dansk / norsk"},
+    no:{clientsH:"Kunder og markeder",clientsP:"Velg et marked for å se siden på relevant arbeidsspråk.",c1:"Skandinavia",c1s:"Engelsk / svensk / dansk / norsk"}
+  };
 
-I would like to know more about MANIW & Co., available products, markets, export volumes and quotation process.
+  const langMap={en:"en",es:"es",fr:"fr",de:"de",ja:"ja",ko:"ko",zh:"zh-CN",sv:"sv",da:"da",no:"no"};
 
-Thank you.")}`}/* MW_V4_FINAL_TUNE_JS_START */
-T.ja=Object.assign({},T.en,{langLabel:"Language",navMarkets:"Clients & Markets",navPortfolio:"Products",navStory:"Corporate",navLogistics:"Logistics",navContact:"Contact",heroK:"MANIW & Co. Global Exports",heroTitle:"Premium Mexican harvest for global markets.",heroLead:"We connect Mexican producers with international buyers through product adaptation, commercial documentation and integrated logistics.",clientsK:"Global Presence",clientsH:"Clients & Markets",clientsP:"Strategic commercial relationships across North America, Europe and Asia.",c1:"Scandinavia Region",c1s:"Nordic commercial network",c2:"Japan",c2s:"Premium quality market",portfolioH:"Commercial Portfolio",logH:"Uncompromising Logistics Authority.",realH:"Real Operations",realP:"A glimpse into our daily commercial and logistical activities worldwide.",realNote:"Certifications and documents depend on product, destination and buyer requirements.",contactH:"Initiate Trade"});
-const __mwApply=applyLang;
-applyLang=function(l){__mwApply(l);mwPaintLang(l)};
-function mwPaintLang(l){
-  document.querySelectorAll(".marketLangBtn").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
-  document.querySelectorAll(".client.marketLang").forEach(c=>c.classList.toggle("active",c.dataset.setLang===l));
-}
-function mwScandi(open){
-  const m=document.getElementById("scandiModal");
-  if(!m)return;
-  m.classList.toggle("show",!!open);
-  m.setAttribute("aria-hidden",open?"false":"true");
-}
-document.addEventListener("click",e=>{
-  const langBtn=e.target.closest("[data-lang]");
-  if(langBtn){applyLang(langBtn.dataset.lang);mwScandi(false);return}
-  const client=e.target.closest(".client.marketLang");
-  if(client){
-    if(client.dataset.market==="scandinavia"){mwScandi(true);return}
-    if(client.dataset.setLang)applyLang(client.dataset.setLang);
+  function setTxt(id,val){const el=document.getElementById(id); if(el && val!=null) el.textContent=val;}
+  function applyLang(lang){
+    const t=Object.assign({},BASE,I18N[lang]||{});
+    Object.keys(t).forEach(k=>setTxt(k,t[k]));
+    document.documentElement.lang=langMap[lang]||"en";
+    localStorage.setItem("mw_lang",lang);
+    $$(".client.marketLang").forEach(c=>c.classList.toggle("active",c.dataset.setLang===lang));
+    const wa=$("#wa"),mail=$("#mail");
+    const msg=lang==="es"?"Hola Irais, me gustaría conocer más sobre MANIW & Co., productos disponibles, mercados, volúmenes de exportación y proceso de cotización.":"Hello Irais, I would like to know more about MANIW & Co., available products, markets, export volumes and quotation process.";
+    if(wa)wa.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
+    if(mail)mail.href="mailto:"+MAIL+"?subject="+encodeURIComponent("Commercial inquiry - MANIW & Co.")+"&body="+encodeURIComponent(msg);
+    console.log("MANIW translator OK:",lang);
   }
-  if(e.target.id==="scandiClose"||e.target.id==="scandiModal")mwScandi(false);
-});
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape")mwScandi(false);
-  if((e.key==="Enter"||e.key===" ")&&e.target.matches(".client.marketLang")){
-    e.preventDefault();
-    e.target.click();
+
+  function openMarket(type){
+    const m=$("#marketModal"),title=$("#marketModalTitle"),copy=$("#marketModalCopy"),opts=$("#marketModalOptions");
+    if(!m||!title||!copy||!opts)return;
+    const conf={
+      canada:{title:"Canada",copy:"Choose English or French for Canadian commercial context.",opts:[["en","English"],["fr","Français"]]},
+      scandinavia:{title:"Scandinavia Region",copy:"Choose the working language for this Nordic market context.",opts:[["en","English"],["sv","Svenska"],["da","Dansk"],["no","Norsk"]]}
+    }[type];
+    if(!conf)return;
+    title.textContent=conf.title; copy.textContent=conf.copy;
+    opts.innerHTML=conf.opts.map(([l,label])=>'<button type="button" data-lang="'+l+'">'+label+'</button>').join("");
+    m.classList.add("show"); m.setAttribute("aria-hidden","false");
   }
-});
-/* MW_V4_FINAL_TUNE_JS_END */
-function boot(){const fy=$("#footYear");if(fy)fy.textContent=`© ${new Date().getFullYear()} MANIW & Co. S.A. de C.V.`;const pref=localStorage.getItem("mw_lang")||"en";applyLang(pref);const es=$("#langEs"),en=$("#langEn");es&&es.addEventListener("click",()=>applyLang("es"));en&&en.addEventListener("click",()=>applyLang("en"))}boot();})();</script>
+
+  function closeMarket(){const m=$("#marketModal"); if(m){m.classList.remove("show");m.setAttribute("aria-hidden","true");}}
+
+  document.addEventListener("click",e=>{
+    const lb=e.target.closest("[data-lang]");
+    if(lb && lb.dataset.lang){applyLang(lb.dataset.lang);closeMarket();return;}
+    const c=e.target.closest(".client.marketLang");
+    if(c){
+      if(c.dataset.market){openMarket(c.dataset.market);return;}
+      if(c.dataset.setLang){applyLang(c.dataset.setLang);return;}
+    }
+    if(e.target.id==="marketModalClose"||e.target.id==="marketModal")closeMarket();
+  });
+
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape")closeMarket();
+    if((e.key==="Enter"||e.key===" ")&&e.target.matches(".client.marketLang")){e.preventDefault();e.target.click();}
+  });
+
+  const fy=$("#footYear"); if(fy)fy.textContent="© "+new Date().getFullYear()+" MANIW & Co. S.A. de C.V.";
+  applyLang(localStorage.getItem("mw_lang")||"en");
+
+  console.group("MANIW DEBUG");
+  console.log("translator ready");
+  console.log("market cards:",$$(".client.marketLang").length);
+  console.log("modal:",!!$("#marketModal"));
+  console.groupEnd();
+})();
+
+/* MW_HINT_FINAL_SAFE_START */
+(()=>{
+  const PHONE="5215545045006";
+  const MAIL="irais@mwcompany.com.mx";
+  const H={
+    en:["Choose your preferred language.","Active commercial markets and destinations."],
+    es:["Elige el idioma de tu preferencia.","Mercados y destinos comerciales activos."],
+    fr:["Choisissez votre langue préférée.","Marchés et destinations commerciales actifs."],
+    de:["Wählen Sie Ihre bevorzugte Sprache.","Aktive Handelsmärkte und Zielregionen."],
+    ja:["ご希望の言語を選択してください。","有効な商業市場と展開先。"],
+    ko:["원하는 언어를 선택하세요.","활성 상업 시장 및 목적지."],
+    zh:["请选择您的首选语言。","活跃商业市场与目的地。"],
+    sv:["Välj önskat språk.","Aktiva handelsmarknader och destinationer."],
+    da:["Vælg dit foretrukne sprog.","Aktive handelsmarkeder og destinationer."],
+    no:["Velg ønsket språk.","Aktive handelsmarkeder og destinasjoner."]
+  };
+  const C={
+    en:["Commercial inquiry - MANIW & Co.","Hello Irais,\n\nI would like to know more about MANIW & Co., available products, active markets, export volumes and the quotation process.\n\nThank you."],
+    es:["Consulta comercial - MANIW & Co.","Hola Irais,\n\nMe gustaría conocer más sobre MANIW & Co., productos disponibles, mercados activos, volúmenes de exportación y proceso de cotización.\n\nGracias."],
+    fr:["Demande commerciale - MANIW & Co.","Bonjour Irais,\n\nJe souhaite en savoir plus sur MANIW & Co., les produits disponibles, les marchés actifs, les volumes d’exportation et le processus de cotation.\n\nMerci."],
+    de:["Geschäftsanfrage - MANIW & Co.","Hallo Irais,\n\nich möchte mehr über MANIW & Co., verfügbare Produkte, aktive Märkte, Exportvolumen und den Angebotsprozess erfahren.\n\nVielen Dank."],
+    ja:["商談のお問い合わせ - MANIW & Co.","Irais様\n\nMANIW & Co.の取扱製品、対象市場、輸出数量、見積りプロセスについて詳しく知りたいです。\n\nよろしくお願いいたします。"],
+    ko:["상업 문의 - MANIW & Co.","안녕하세요 Irais,\n\nMANIW & Co.의 제품, 주요 시장, 수출 물량 및 견적 절차에 대해 더 알고 싶습니다.\n\n감사합니다."],
+    zh:["商业咨询 - MANIW & Co.","您好 Irais，\n\n我想进一步了解 MANIW & Co. 的可供产品、活跃市场、出口数量和报价流程。\n\n谢谢。"],
+    sv:["Kommersiell förfrågan - MANIW & Co.","Hej Irais,\n\nJag vill veta mer om MANIW & Co., tillgängliga produkter, aktiva marknader, exportvolymer och offertprocessen.\n\nTack."],
+    da:["Kommerciel forespørgsel - MANIW & Co.","Hej Irais,\n\nJeg vil gerne vide mere om MANIW & Co., tilgængelige produkter, aktive markeder, eksportvolumener og tilbudsprocessen.\n\nTak."],
+    no:["Kommersiell forespørsel - MANIW & Co.","Hei Irais,\n\nJeg vil gjerne vite mer om MANIW & Co., tilgjengelige produkter, aktive markeder, eksportvolumer og tilbudsprosessen.\n\nTakk."]
+  };
+  function applyHint(lang){
+    lang=(lang||localStorage.getItem("mw_lang")||document.documentElement.lang||"en").toLowerCase();
+    if(lang.startsWith("zh"))lang="zh";
+    if(!H[lang])lang="en";
+    const top=document.getElementById("marketHintTopText");
+    const bot=document.getElementById("marketHintBottomText");
+    if(top)top.textContent=H[lang][0];
+    if(bot)bot.textContent=H[lang][1];
+
+    const wa=document.getElementById("wa");
+    const mail=document.getElementById("mail");
+    const c=C[lang]||C.en;
+    if(wa)wa.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(c[1]);
+    if(mail)mail.href="mailto:"+MAIL+"?subject="+encodeURIComponent(c[0])+"&body="+encodeURIComponent(c[1]);
+  }
+  document.addEventListener("click",e=>{
+    const b=e.target.closest("[data-lang]");
+    if(b&&b.dataset.lang)setTimeout(()=>applyHint(b.dataset.lang),0);
+    const c=e.target.closest(".client.marketLang");
+    if(c&&c.dataset.setLang)setTimeout(()=>applyHint(c.dataset.setLang),0);
+  });
+  setTimeout(()=>applyHint(),0);
+  window.MANIW_setMarketHints=applyHint;
+})();
+/* MW_HINT_FINAL_SAFE_END */
+
+</script>
 </body>
 </html>
