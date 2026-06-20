@@ -526,14 +526,77 @@ height:18px!important;
 display:block!important;
 object-fit:contain!important;
 }
-.heroText{
-text-align:center!important;
+
+.heroIn{
+width:min(1120px,92vw)!important;
 margin-left:auto!important;
 margin-right:auto!important;
+justify-content:center!important;
+text-align:center!important;
+padding-left:0!important;
+padding-right:0!important;
+}
+
+.heroText{
+width:min(920px,100%)!important;
+margin:0 auto!important;
+text-align:center!important;
+display:flex!important;
+flex-direction:column!important;
+align-items:center!important;
+}
+.hero .k{
+display:flex!important;
+justify-content:center!important;
+width:100%!important;
+margin:0 auto 16px!important;
+text-align:center!important;
+}
+.hero h1{
+margin:16px auto!important;
+text-align:center!important;
+max-width:980px!important;
+}
+.hero p{
+margin:0 auto!important;
+text-align:center!important;
+max-width:860px!important;
 }
 .cta{
+display:flex!important;
 justify-content:center!important;
 align-items:center!important;
+width:100%!important;
+margin-top:28px!important;
+}
+@media(max-width:640px){
+  .heroIn{
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .heroText{
+    width:100%!important;
+    margin:0 auto!important;
+    align-items:center!important;
+  }
+  .hero .k{
+    width:100%!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .hero h1{
+    margin:14px auto!important;
+    max-width:100%!important;
+  }
+  .hero p{
+    margin:0 auto!important;
+    max-width:100%!important;
+  }
+  .cta{
+    justify-content:center!important;
+    align-items:center!important;
+    width:100%!important;
+  }
 }
 @media(max-width:640px){
 #navMarkets,#navStory{display:none!important}
